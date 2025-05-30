@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학습 도우미 AI 활용 실태 분석 인포그래픽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Custom CSS for Professional & Clear Palette and additional styles */
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #F4F7F9; /* 기본 배경 */
+            color: #263238; /* Dark Text */
+        }
+        .primary-blue { color: #2A62B6; }
+        .bg-primary-blue { background-color: #2A62B6; }
+        .secondary-teal { color: #4ECDC4; }
+        .bg-secondary-teal { background-color: #4ECDC4; }
+        .accent-grey { color: #A9A9A9; }
+        .bg-accent-grey { background-color: #A9A9A9; }
+        .supporting-light-blue { color: #E0F2FE; }
+        .bg-supporting-light-blue { background-color: #E0F2FE; }
+        .light-background { background-color: #FFFFFF; } /* 카드 배경 */
+        .dark-text { color: #263238; }
+
+        .report-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2A62B6;
+            line-height: 1.3;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2A62B6;
+            border-bottom: 2px solid #4ECDC4;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .chart-container {
+            position: relative;
+            /* height and width are set by Tailwind classes on the element */
+        }
+        /* 해라체 적용 */
+        p, li, h1, h2, h3, h4, h5,figcaption {
+            /* 기본적으로 Tailwind CSS의 leading 클래스 등으로 줄간격 조절 */
+        }
+        /* Tailwind로는 직접적인 종결어미 제어가 어려워 내용 자체를 수정 */
+
+        .keyword-tag {
+            display: inline-block;
+            background-color: #E0F2FE;
+            color: #2A62B6;
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            margin: 0.2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-primary-blue text-white py-8 px-4 text-center">
+        <div class="container mx-auto">
+            <h1 class="report-title leading-tight">학습 도우미 AI, 어디까지 써야할까?</h1>
+            <p class="text-lg mt-2">학생들의 생성형 AI 활용 실태와 학습 태도 분석</p>
+            <p class="text-sm mt-4">1학년 4반 4조 (신수아, 이여설, 김진수, 김동현, 조유진)</p>
+            <p class="text-xs mt-1">작성일: 2025년 5월 29일</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section class="mb-12">
+            <h2 class="section-title">1. 조사 동기와 목적</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 primary-blue">가. 조사 동기</h3>
+                    <p class="text-gray-700 leading-relaxed">최근 AI 기술이 일상에 깊숙이 적용되면서, 특히 학생들이 학습 및 과제 수행 과정에서 AI의 도움을 받는 경우가 증가했다. 그러나 AI에 대한 의존도가 높아짐에 따라, 학생들의 자기 주도적 사고 및 학습 능력 저하에 대한 우려가 제기됐다. 이에 본 조사는 어느 정도까지 AI의 도움을 받는 것이 적절하며, 어느 선에서 스스로 학습해야 하는가라는 문제의식을 바탕으로 시작했다.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 primary-blue">나. 조사 목적</h3>
+                    <p class="text-gray-700 leading-relaxed">본 조사는 AI를 적절히 활용하면서도 학생 개인의 지식 함양과 사고력 증진을 위한 기준점을 모색하는 것을 목표로 한다. AI 의존을 지양하고 학습 능력을 신장하는 방법과 AI를 효과적인 학습 도구로 활용하는 방법을 균형 있게 파악하여, 또래 학생들과 함께 AI와 현명하게 공존할 수 있는 방향을 제안한다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 card">
+            <h2 class="section-title">2. 조사 계획</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                    <div class="bg-secondary-teal text-white p-4 rounded-lg h-full flex flex-col justify-center">
+                        <h3 class="text-lg font-semibold">조사 기간</h3>
+                        <p>2025년 5월 12일 ~ 5월 23일</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-secondary-teal text-white p-4 rounded-lg h-full flex flex-col justify-center">
+                        <h3 class="text-lg font-semibold">조사 대상</h3>
+                        <p>미림마이스터고 뉴미디어 소프트웨어과 1학년 4반 18명, 조정모, 정재희</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-secondary-teal text-white p-4 rounded-lg h-full flex flex-col justify-center">
+                        <h3 class="text-lg font-semibold">조사 방법</h3>
+                        <p>설문조사, 인터뷰</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="section-title">3. 조사 결과</h2>
+
+            <article class="card mb-8">
+                <h3 class="text-xl font-semibold mb-4 primary-blue">가. 설문조사 분석 결과</h3>
+                <p class="text-gray-700 mb-6 leading-relaxed">설문에 참여한 학생들은 AI를 학습에 유익한 도구로 인식하고 있으나, 무분별한 사용보다는 신중하고 자기 주도적인 활용이 중요하다고 생각하는 경향을 보였다. AI를 학습에 적극적으로 의존하기보다는, 필요한 순간에 힌트를 얻는 수준으로 제한해 사용하는 것이 적절하다는 의견이 가장 많았다. 대부분의 학생들은 AI가 제시한 답을 단순히 받아들이기보다는 내용을 이해하고 자기 것으로 만들려는 태도를 가지고 있으며, 이는 AI 활용이 학습 효과를 높이는 데 긍정적으로 작용할 수 있음을 보여준다. 생성형 AI 사용이 사고력이나 지식 습득에 방해가 된다고 느끼는 학생도 있고, 그렇지 않다고 생각하는 학생도 있어 인식이 다양하게 나타나 학생들 사이에서 AI 사용의 영향에 대한 인식이 분산되어 있음을 확인했다.</p>
+
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <h4 class="font-semibold mb-2 text-gray-800">Q1: AI 도움, 어느 정도가 효과적일까?</h4>
+                        <div class="chart-container w-full max-w-md mx-auto h-72 md:h-80">
+                            <canvas id="surveyChart1"></canvas>
+                        </div>
+                        <figcaption class="text-xs text-gray-600 mt-2">가장 많은 학생(52.6%)이 '중간중간 힌트' 수준을 선호했다.</figcaption>
+                    </div>
+
+                    <div class="text-center">
+                        <h4 class="font-semibold mb-2 text-gray-800">Q2: AI 답변, 완전히 이해하고 넘어갈까?</h4>
+                        <div class="chart-container w-full max-w-md mx-auto h-72 md:h-80">
+                            <canvas id="surveyChart2"></canvas>
+                        </div>
+                         <figcaption class="text-xs text-gray-600 mt-2">대다수(89.5%)가 AI 답변을 '이해한다' 또는 '매우 이해한다'고 응답했다.</figcaption>
+                    </div>
+
+                    <div class="text-center">
+                        <h4 class="font-semibold mb-2 text-gray-800">Q3: AI 사용, 사고/지식에 방해될까?</h4>
+                        <div class="chart-container w-full max-w-md mx-auto h-72 md:h-80">
+                            <canvas id="surveyChart3"></canvas>
+                        </div>
+                        <figcaption class="text-xs text-gray-600 mt-2">의견이 분분했으나, 36.8%는 '방해된다' 또는 '매우 방해된다'고 느꼈다.</figcaption>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3 class="text-xl font-semibold mb-4 primary-blue">나. 개별 인터뷰 분석 결과</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-2 text-gray-800">조정모 학생 인터뷰 요약</h4>
+                        <p class="text-gray-700 mb-3 leading-relaxed">조정모 학생은 AI를 다양한 시각을 제시하는 도구로 인식하며, 자신이 생각 못한 부분을 볼 수 있어 도움이 된다고 평가했다. 그러나 AI 의존에는 선을 그으며, 스스로 해결하려 노력하고 AI는 보조 수단으로 여겼다. AI의 단점으로는 부정확한 정보 전달을 언급하며 신뢰도 문제를 지적했다. AI 사용 기준에 대해서는 명확한 기준 없이 상황에 따라 판단한다고 답해, 학생들의 AI 활용 가이드라인 부재 현실을 시사했다.</p>
+                        <h5 class="font-medium mt-3 mb-1 text-gray-700">주요 키워드:</h5>
+                        <span class="keyword-tag">다양한 관점</span>
+                        <span class="keyword-tag">도구적 활용</span>
+                        <span class="keyword-tag">기준 부재</span>
+                        <span class="keyword-tag">자기 주도</span>
+                        <span class="keyword-tag">AI 신뢰도</span>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2 text-gray-800">정재희 학생 인터뷰 요약</h4>
+                        <p class="text-gray-700 mb-3 leading-relaxed">정재희 학생은 코딩 테스트 준비 시 GPT 코드를 복사하기보다 스스로 해석하고 이해하려 노력하며, AI 없이도 문제 해결 능력을 키우는 방식으로 활용한다고 했다. 모르는 내용을 빠르게 해결할 때 AI가 검색보다 효율적이라고 평가했다. 숙제에 AI를 활용한 경험에 대해, 스스로 해결하는 장점과 마감 직전 복붙하는 단점을 모두 인식했다. 수행평가에 AI 사용 시 정직하지 않다는 느낌을 받았다고 솔직히 말했으며, AI 사용 기준 없이 모르면 바로 활용한다고 밝혔다.</p>
+                        <h5 class="font-medium mt-3 mb-1 text-gray-700">주요 키워드:</h5>
+                        <span class="keyword-tag">코드 해석</span>
+                        <span class="keyword-tag">자기 주도 학습</span>
+                        <span class="keyword-tag">정보 탐색 효율</span>
+                        <span class="keyword-tag">윤리적 고민</span>
+                        <span class="keyword-tag">즉각적 활용</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="section-title">4. 결론</h2>
+            <div class="card mb-6">
+                <h3 class="text-xl font-semibold mb-3 primary-blue">가. 조사 결과 종합 및 주요 발견점 요약</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2 leading-relaxed">
+                    <li><strong>AI 활용 정도 인식:</strong> 학생들은 AI 과다 의존보다 적절한 활용(힌트 받기 52.6%, 개념 참고 26.3%)을 선호하며, 학습 보조 도구로 인식한다.</li>
+                    <li><strong>AI 답변 이해도 및 학습 노력:</strong> 응답자 89.5%가 AI 답변을 이해한다고 인식하며, 내용을 소화하려는 노력이 일부 학생들에게서 나타났다 (예: 코드 직접 해석, 생각 발전 도구로 활용).</li>
+                    <li><strong>AI 사용의 방해 요인 인식:</strong> 36.8%는 AI 사용이 사고력/지식 축적에 방해된다고 우려했으며, AI 사용 영향에 대한 인식은 다양하게 분산됐다 (보통이다 31.6%, 그렇지 않다 31.6%).</li>
+                    <li><strong>AI 사용 기준의 모호성:</strong> 인터뷰 결과, AI 사용 시점에 대한 명확한 기준이 없는 학생이 많았으며, 개인별 차이가 있거나 기준이 미확립된 상태임을 확인했다.</li>
+                </ul>
+            </div>
+
+            <div class="card mb-6">
+                <h3 class="text-xl font-semibold mb-3 primary-blue">나. 조사를 통해 새롭게 알게 된 점 및 느낀 점</h3>
+                <p class="text-gray-700 leading-relaxed">본 조사를 통해 학생들은 생성형 AI를 무조건 따르거나 맹목적으로 의존하기보다, 학습에 도움이 되는 도구로 인식하며 적절한 사용 방식을 고민함을 확인했다. 긍정적인 학습 태도도 관찰됐다. 하지만 AI 사용이 사고력 저하로 이어질 수 있다는 우려와 함께, AI 사용 기준 부족, 정보 신뢰성 문제도 드러났다. 이는 단순 활용 능력을 넘어 비판적 수용, 윤리적 인식, 자기주도 학습 태도가 매우 중요함을 시사한다. 조사 결과는 한국청소년정책연구원의 국가 연구 결과와도 맥을 같이 하며, 우리 반 학생들의 경험이 AI 시대를 살아가는 청소년 세대 전체의 과제를 반영함을 알 수 있었다. 생성형 AI를 사고 확장 동반자로 보고 스스로 판단하는 힘이 중요하며, AI 리터러시 교육의 필요성을 강하게 느꼈다.</p>
+            </div>
+
+            <div class="card mb-6">
+                <h3 class="text-xl font-semibold mb-3 primary-blue">다. 효과적인 AI 활용을 위한 제언</h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-supporting-light-blue rounded-lg">
+                        <h4 class="font-semibold text-primary-blue">1. AI를 '답변기'가 아닌 '사고 확장 도구'로 활용하기</h4>
+                        <p class="text-sm text-gray-700">직접적 답보다 아이디어 획득, 자기 생각과 비교하며 사고를 확장하는 방식으로 활용해야 한다.</p>
+                    </div>
+                    <div class="p-4 bg-supporting-light-blue rounded-lg">
+                        <h4 class="font-semibold text-primary-blue">2. AI 답변에 대한 비판적 검토 및 내재화 노력</h4>
+                        <p class="text-sm text-gray-700">AI 정보 맹신 금지, 스스로 이해하고 검증하며 자기 언어로 설명할 수 있도록 소화해야 한다.</p>
+                    </div>
+                    <div class="p-4 bg-supporting-light-blue rounded-lg">
+                        <h4 class="font-semibold text-primary-blue">3. 자신만의 AI 사용 기준 정립하기</h4>
+                        <p class="text-sm text-gray-700">학습 목표, 과제 성격, 이해 수준을 고려해 구체적인 상황별 활용 원칙을 정립하는 연습이 필요하다.</p>
+                    </div>
+                    <div class="p-4 bg-supporting-light-blue rounded-lg">
+                        <h4 class="font-semibold text-primary-blue">4. 윤리적인 AI 활용에 대한 인식 향상</h4>
+                        <p class="text-sm text-gray-700">단순 복붙은 지양하고, AI 도움 시 명시하며 자신만의 결과물을 만드는 윤리적 태도를 갖추어야 한다.</p>
+                    </div>
+                </div>
+            </div>
+             <div class="card">
+                <h3 class="text-xl font-semibold mb-3 primary-blue">라. 우리의 다짐</h3>
+                <p class="text-gray-700 leading-relaxed">본 보고서를 작성한 우리는 이번 조사를 통해 생성형 AI의 효과적인 학습 활용에 대한 깊은 통찰을 얻었다. 앞으로 AI를 사용할 때, 조사 결과에서 나타난 우려들을 경계하고 제언한 내용들을 적극 실천하여, AI에 의존하기보다 AI와 함께 성장하며 스스로 생각하는 힘과 지식을 꾸준히 키워나갈 것을 다짐한다. 또한, 우리가 얻은 지식과 경험을 친구들과 공유하며, 다 함께 AI 시대를 현명하게 헤쳐나갈 수 있도록 노력한다.</p>
+            </div>
+        </section>
+
+        <section class="mb-12 card">
+            <h2 class="section-title">5. 참고자료</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                <li>미림마이스터고등학교 뉴미디어소프트웨어과 1학년 4반 조정모, 정재희 학생 심층 인터뷰 녹취록 (2025.5.) (클로바 노트 링크 생략)</li>
+                <li>미림마이스터고 소프트웨어과 1학년 4반 학생 18명 대상 생성형 AI 활용 실태 설문조사 (2025) (구글 설문지 링크 생략)</li>
+                <li>한국청소년정책연구원. (2024). 청소년의 생성형 AI 이용실태 및 리터러시 증진 방안 연구. 연구보고 24-기본02. (주요 참고 문헌)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-accent-grey text-white text-center py-6">
+        <p class="text-sm">&copy; 2025 미림마이스터고 1학년 4반 4조. All rights reserved.</p>
+        <p class="text-xs mt-1">이 인포그래픽은 제공된 보고서 내용을 기반으로 AI에 의해 생성되었습니다.</p>
+    </footer>
+
+    <script>
+        // Helper function to wrap text for chart labels
+        function formatLabel(str, maxWidth) {
+            const lines = [];
+            let currentLine = '';
+            str.split(' ').forEach(word => {
+                if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            if (currentLine.trim().length > 0) {
+                lines.push(currentLine.trim());
+            }
+            if (lines.length === 0 && str.length > 0) { // Handle single very long word
+                 let tempStr = str;
+                 while(tempStr.length > maxWidth) {
+                    lines.push(tempStr.substring(0, maxWidth));
+                    tempStr = tempStr.substring(maxWidth);
+                 }
+                 lines.push(tempStr);
+            }
+            return lines;
+        }
+
+        // Chart.js configurations
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            indexAxis: 'y', // Horizontal bar chart
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    max: 65, // Adjusted for Q1 percentages
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%'
+                        },
+                        color: '#263238',
+                         font: { size: 10 }
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: '#263238',
+                        font: { size: 11 },
+                        callback: function(value) {
+                            const label = this.getLabelForValue(value);
+                            return formatLabel(label, 12); // Wrap labels at 12 chars for y-axis
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: '#2A62B6',
+                    titleFont: { size: 14 },
+                    bodyFont: { size: 12 },
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.x !== null) {
+                                label += context.parsed.x + '%';
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        const chartOptionsVertical = { // For Q2 and Q3 if preferred vertical
+            ...chartOptions,
+            indexAxis: 'x',
+             scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 70, // Adjusted for Q2 percentages
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%'
+                        },
+                        color: '#263238',
+                        font: { size: 10 }
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#263238',
+                        font: { size: 11 },
+                         callback: function(value) {
+                            const label = this.getLabelForValue(value);
+                            return formatLabel(label, 8); // Wrap labels at 8 chars for x-axis
+                        }
+                    }
+                }
+            },
+        };
+
+
+        // // Visualization: Chart.js canvas for survey question 1
+        const surveyCtx1 = document.getElementById('surveyChart1').getContext('2d');
+        new Chart(surveyCtx1, {
+            type: 'bar',
+            data: {
+                labels: [
+                    '중간중간 힌트 받기',
+                    '기본 개념만 참고용',
+                    '최소한, 필요할 때만',
+                    '대부분 AI로 빠르게 해결',
+                    '모든 문제에 적극 활용'
+                ],
+                datasets: [{
+                    label: '응답 비율',
+                    data: [52.6, 26.3, 10.5, 5.3, 5.3],
+                    backgroundColor: ['#2A62B6', '#4ECDC4', '#A9A9A9', '#E0F2FE', '#263238'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1
+                }]
+            },
+            options: chartOptions
+        });
+
+        // // Visualization: Chart.js canvas for survey question 2
+        const surveyCtx2 = document.getElementById('surveyChart2').getContext('2d');
+        const survey2Options = JSON.parse(JSON.stringify(chartOptions)); // Deep copy
+        survey2Options.scales.x.max = 70; // Adjust max for Q2
+        new Chart(surveyCtx2, {
+            type: 'bar',
+            data: {
+                labels: ['그렇다', '매우 그렇다', '보통이다'], // '전혀 그렇지 않다'와 '그렇지 않다'는 0%이므로 생략
+                datasets: [{
+                    label: '응답 비율',
+                    data: [63.2, 26.3, 10.5],
+                    backgroundColor: ['#2A62B6', '#4ECDC4', '#A9A9A9'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1
+                }]
+            },
+            options: survey2Options
+        });
+
+        // // Visualization: Chart.js canvas for survey question 3
+        const surveyCtx3 = document.getElementById('surveyChart3').getContext('2d');
+        const survey3Options = JSON.parse(JSON.stringify(chartOptions)); // Deep copy
+        survey3Options.scales.x.max = 40; // Adjust max for Q3
+        new Chart(surveyCtx3, {
+            type: 'bar',
+            data: {
+                labels: ['보통이다', '그렇다', '그렇지 않다', '매우 그렇다', '전혀 그렇지 않다'],
+                datasets: [{
+                    label: '응답 비율',
+                    data: [31.6, 26.3, 26.3, 10.5, 5.3], // 순서대로 정렬 또는 의미 있는 순서로
+                    backgroundColor: ['#A9A9A9', '#E0F2FE', '#4ECDC4', '#263238', '#2A62B6' ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1
+                }]
+            },
+            options: survey3Options
+        });
+
+    </script>
+    </body>
+</html>
